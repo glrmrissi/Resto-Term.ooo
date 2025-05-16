@@ -1,18 +1,67 @@
 function KeyBoard() {
   const keyboardKey = document.querySelectorAll(".keyboard_keys");
-  let res = document.querySelector<HTMLElement>('#res');
-  keyboardKey.forEach(key => {
+  let res = document.querySelector<HTMLElement>("#res");
+  const url =
+    "https://gist.githubusercontent.com/vncsmnl/25e7c165da276405af8ca4e1c8e17806/raw/aaeb75a75ff48ae8cd8888bae031dcb9884cddaa/wordlist";
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      const words = data.split("\n");
+      console.log(words);
+    });
+  keyboardKey.forEach((key) => {
     key.addEventListener("click", () => {
       const valueKey = (key as HTMLElement).dataset.key;
       res!.textContent = valueKey ?? "";
       console.log(valueKey);
-    })
-
-  })
+    });
+  });
   return (
     <>
       <section className="keyboard_section">
         <section className="words">
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
+          <div className="letters">
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+            <button>¢</button>
+          </div>
           <h2 id="res">d</h2>
         </section>
         <article className="keyboard_grid">
@@ -49,15 +98,33 @@ function KeyBoard() {
             </button>
           </div>
           <div className="col">
-            <button className="keyboard_keys" data-key="A">A</button>
-            <button className="keyboard_keys" data-key="S">S</button>
-            <button className="keyboard_keys" data-key="D">D</button>
-            <button className="keyboard_keys" data-key="F">F</button>
-            <button className="keyboard_keys" data-key="G">G</button>
-            <button className="keyboard_keys" data-key="H">H</button>
-            <button className="keyboard_keys" data-key="J">J</button>
-            <button className="keyboard_keys" data-key="K">K</button>
-            <button className="keyboard_keys" data-key="L">L</button>
+            <button className="keyboard_keys" data-key="A">
+              A
+            </button>
+            <button className="keyboard_keys" data-key="S">
+              S
+            </button>
+            <button className="keyboard_keys" data-key="D">
+              D
+            </button>
+            <button className="keyboard_keys" data-key="F">
+              F
+            </button>
+            <button className="keyboard_keys" data-key="G">
+              G
+            </button>
+            <button className="keyboard_keys" data-key="H">
+              H
+            </button>
+            <button className="keyboard_keys" data-key="J">
+              J
+            </button>
+            <button className="keyboard_keys" data-key="K">
+              K
+            </button>
+            <button className="keyboard_keys" data-key="L">
+              L
+            </button>
             <button className="keyboard_keys" data-key="BACKSPACE">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,14 +140,30 @@ function KeyBoard() {
             </button>
           </div>
           <div className="col">
-            <button className="keyboard_keys" data-key="Z">Z</button>
-            <button className="keyboard_keys" data-key="X">X</button>
-            <button className="keyboard_keys" data-key="C">C</button>
-            <button className="keyboard_keys" data-key="V">V</button>
-            <button className="keyboard_keys" data-key="B">B</button>
-            <button className="keyboard_keys" data-key="N">N</button>
-            <button className="keyboard_keys" data-key="M">M</button>
-            <button className="keyboard_keys" data-key="ENTER">Enter</button>
+            <button className="keyboard_keys" data-key="Z">
+              Z
+            </button>
+            <button className="keyboard_keys" data-key="X">
+              X
+            </button>
+            <button className="keyboard_keys" data-key="C">
+              C
+            </button>
+            <button className="keyboard_keys" data-key="V">
+              V
+            </button>
+            <button className="keyboard_keys" data-key="B">
+              B
+            </button>
+            <button className="keyboard_keys" data-key="N">
+              N
+            </button>
+            <button className="keyboard_keys" data-key="M">
+              M
+            </button>
+            <button className="keyboard_keys" data-key="ENTER">
+              Enter
+            </button>
           </div>
           <div className="col"></div>
         </article>
